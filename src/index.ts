@@ -42,7 +42,7 @@ export const setData = async (content: string | AnyObject): Promise<{ uuid: stri
         `${directory}/${uuid}`,
         Buffer.from(typeof content === 'object' ? JSON.stringify(content) : content),
         {
-            mime: typeof content === 'object' ? 'application/json' : 'text/plain',
+            mime: typeof content === 'object' ? 'application/json' : 'text/plain; charset=utf-8',
         },
     );
     return {
